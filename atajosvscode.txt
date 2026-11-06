@@ -1,0 +1,9 @@
+Atajos en vscode MacBook
+
+Atajo	¿Qué hace?
+⌥ Option + clic	Agrega un cursor donde hagas clic
+⌥ Option + ⌘ Command + ↓	Agrega otro cursor en la línea inferior
+⌥ Option + ⌘ Command + ↑	Agrega otro cursor en la línea superior
+⌘ Command + D	Selecciona la siguiente coincidencia de la palabra seleccionada
+⌘ Command + Shift + L	Selecciona todas las coincidencias del texto seleccionado
+Esc	Regresa a un solo cursor
