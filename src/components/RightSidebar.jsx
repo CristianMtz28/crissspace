@@ -1,9 +1,16 @@
+import BirthdayWidget from './widgets/BirthdayWidget.jsx';
+import WishlistWidget from './widgets/WishlistWidget';
+import SocialWidget from './widgets/SocialWidget.jsx';
+
+
 function RightSidebar() {
     return (
-        <aside className="rounded-lg bg-gray-100 p-4">
-            <h2>Mi espacio</h2>
+        <aside className="flex flex-col gap-6">
+        <BirthdayWidget />
+        <WishlistWidget />
+        <SocialWidget />
         </aside>
     );
-}
+    }
 
-export default RightSidebar; 
+export default RightSidebar;
