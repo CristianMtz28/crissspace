@@ -5,7 +5,7 @@ import SocialWidget from './widgets/SocialWidget.jsx';
 
 function RightSidebar() {
     return (
-        <aside className="flex flex-col gap-6">
+        <aside className="sticky top-[calc(100vh-100%)] flex flex-col gap-6 self-start">
         <BirthdayWidget />
         <WishlistWidget />
         <SocialWidget />

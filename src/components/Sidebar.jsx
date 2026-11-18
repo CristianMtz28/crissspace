@@ -21,13 +21,13 @@ function Sidebar() {
     ];
 
     const topicItems = [
-        { label: 'Programación', path: '/programacion', icon: CodeXml },
-        { label: 'Videojuegos', path: '/videojuegos', icon: SiPlaystation, iconSize: 23 },
         { label: 'Cine y series', path: '/cine-series', icon: Clapperboard },
-        { label: 'Cómics', path: '/comics', icon: BookOpen },
         { label: 'Fútbol', path: '/futbol', icon: TbBallFootball },
-        { label: 'Viajes', path: '/viajes', icon: Plane },
         { label: 'Música', path: '/musica', icon: AudioWaveform },
+        { label: 'Videojuegos', path: '/videojuegos', icon: SiPlaystation, iconSize: 23 },
+        { label: 'Comics', path: '/comics', icon: BookOpen },
+        { label: 'Viajes', path: '/viajes', icon: Plane },
+        { label: 'Programación', path: '/programacion', icon: CodeXml },
     ];
 
     const currentPath = window.location.pathname;
@@ -95,6 +95,17 @@ function Sidebar() {
                 <BriefcaseBusiness size={18} strokeWidth={1.8} />
                 <span>Work / Portafolio</span>
             </a>
+
+            <div className="my-5 border-t border-gray-200 dark:border-[#39372F]" />
+            <div className="px-3">
+                <h2 className="mb-3 text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-[#B8B1A5]">
+                    Detrás del espacio
+                </h2>
+
+                <p className="text-xs leading-relaxed text-gray-600 dark:text-[#A69F93]">
+                    Hecho con calma, café y un poquito de desvelo. ☾
+                </p>
+            </div>
         </aside>
     );
 }
