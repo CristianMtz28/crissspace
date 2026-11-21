@@ -1,5 +1,6 @@
 import { SiPlaystation } from 'react-icons/si';
 import { TbBallFootball } from 'react-icons/tb';
+import { NavLink } from 'react-router-dom';
 
 import {
     House,
@@ -30,8 +31,6 @@ function Sidebar() {
         { label: 'Programación', path: '/programacion', icon: CodeXml },
     ];
 
-    const currentPath = window.location.pathname;
-
     return (
         <aside className="p-4">
             <h2 className="mb-3 text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">
@@ -43,18 +42,23 @@ function Sidebar() {
                     const Icon = item.icon;
 
                     return (
-                        <a
+                        
+                        <NavLink
                             key={item.path}
-                            href={item.path}
-                            className={`flex items-center gap-3 rounded-lg px-3 py-2 text-[13px] transition-colors ${
-                                currentPath === item.path
-                                    ? 'bg-gray-900 font-semibold text-white dark:bg-[#29271F] dark:text-[#DDBC7C]'
-                                    : 'hover:bg-gray-200 dark:hover:bg-[#29271F]'
-                            }`}
+                            to={item.path}
+                            end
+                            className={({ isActive }) =>
+                                `flex items-center gap-3 rounded-lg px-3 py-2 text-[13px] transition-colors ${
+                                    isActive
+                                        ? 'bg-gray-900 font-semibold text-white dark:bg-[#29271F] dark:text-[#DDBC7C]'
+                                        : 'hover:bg-gray-200 dark:hover:bg-[#29271F]'
+                                }`
+                            }
                         >
                             <Icon size={18} strokeWidth={1.8} />
                             <span>{item.label}</span>
-                        </a>
+                        </NavLink>
+
                     );
                 })}
             </nav>
@@ -70,31 +74,36 @@ function Sidebar() {
                     const Icon = item.icon;
 
                     return (
-                        <a
+                        
+                        <NavLink
                             key={item.path}
-                            href={item.path}
-                            className={`flex items-center gap-3 rounded-lg px-3 py-2 text-[13px] transition-colors ${
-                                currentPath === item.path
-                                    ? 'bg-gray-900 font-semibold text-white dark:bg-[#29271F] dark:text-[#DDBC7C]'
-                                    : 'hover:bg-gray-200 dark:hover:bg-[#29271F]'
-                            }`}
+                            to={item.path}
+                            end
+                            className={({ isActive }) =>
+                                `flex items-center gap-3 rounded-lg px-3 py-2 text-[13px] transition-colors ${
+                                    isActive
+                                        ? 'bg-gray-900 font-semibold text-white dark:bg-[#29271F] dark:text-[#DDBC7C]'
+                                        : 'hover:bg-gray-200 dark:hover:bg-[#29271F]'
+                                }`
+                            }
                         >
                             <Icon size={item.iconSize || 18} />
                             <span>{item.label}</span>
-                        </a>
+                        </NavLink>
+
                     );
                 })}
             </nav>
 
             <div className="my-5 border-t border-gray-200 dark:border-[#39372F]" />
 
-            <a
-                href="/work"
+            <NavLink
+                to="/work"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-[13px] font-semibold transition-colors hover:bg-gray-200 dark:hover:bg-[#29271F]"
             >
                 <BriefcaseBusiness size={18} strokeWidth={1.8} />
                 <span>Work / Portafolio</span>
-            </a>
+            </NavLink>
 
             <div className="my-5 border-t border-gray-200 dark:border-[#39372F]" />
             <div className="px-3">

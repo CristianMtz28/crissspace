@@ -1,4 +1,5 @@
 import logoCM from '../assets/logo-cm.jpeg';
+import { Link } from 'react-router-dom';
 
 function Header({ isDark, setIsDark }) {
     return (
@@ -9,7 +10,7 @@ function Header({ isDark, setIsDark }) {
             <div className="mx-auto grid w-full max-w-[1440px] grid-cols-[280px_minmax(0,1fr)_340px] items-center gap-6 px-4 py-4">
 
                 {/* Logo y nombre CrissSpace */}
-                <div className="flex items-center gap-3">
+                <Link to="/" className="flex items-center gap-3">
                     {/*Logo CM */}
                     <img
                     src={logoCM}
@@ -23,7 +24,7 @@ function Header({ isDark, setIsDark }) {
                             <span className="font-light">space</span>
                         </div>
                     </div>
-                </div>
+                </Link>
 
                 {/* Buscador */}
                 <div className="w-full">
