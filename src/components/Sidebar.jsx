@@ -18,7 +18,7 @@ function Sidebar() {
     const exploreItems = [
         { label: 'Inicio', path: '/', icon: House },
         { label: 'Blog', path: '/blog', icon: FileText },
-        { label: 'Quotes', path: '/quotes', icon: MessageCircle },
+        { label: 'Quocks', path: '/quocks', icon: MessageCircle },
     ];
 
     const topicItems = [
