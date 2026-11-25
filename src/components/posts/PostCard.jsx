@@ -4,11 +4,16 @@ function PostCard({
     author,
     date,
     time,
-    category,
+    categories = [],
+    tags = [],
     coverImage,
     showCoverInFeed = true,
-    type='article',
+    type = 'article',
+    showCategories = true,
 }) {
+
+    const labels = [...new Set([...categories, ...tags])];
+
     return (
         <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white dark:border-[#39372F] dark:bg-[#1C1D1C]">
 
@@ -55,26 +60,36 @@ function PostCard({
                 <p
                     className={
                         type === 'quock'
-                            ? 'font-serif text-xl leading-relaxed text-gray-800 dark:text-gray-100 italic'
-                            : 'mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300'
+                            ? 'font-serif text-xl leading-relaxed text-gray-800 dark:text-gray-100 italic text-justify'
+                            : 'mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300 text-justify'
                     }
                 >
                     {content}
                 </p>
 
-                <div className="mt-4 flex flex-wrap gap-2">
-                    {type === 'quock' && (
-                        <span className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600 dark:bg-[#29271F] dark:text-[#DDBC7C]">
-                            Quock
-                        </span>
-                    )}
-
-                    {category && (
-                        <span className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600 dark:bg-[#29271F] dark:text-[#DDBC7C]">
+                
+                
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                    {showCategories && categories.map((category) => (
+                        <span
+                            key={`category-${category}`}
+                            className="rounded-full bg-[#F5EFE3] px-3 py-1 text-xs font-medium text-[#8B6A32] dark:bg-[#29271F] dark:text-[#DDBC7C]"
+                        >
                             {category}
                         </span>
-                    )}
+                    ))}
+
+                    {tags.map((tag) => (
+                        <span
+                            key={`tag-${tag}`}
+                            className="text-xs text-gray-500 dark:text-[#AAA9A3]"
+                        >
+                            #{tag.replace(/\s+/g, '')}
+                        </span>
+                    ))}
                 </div>
+
+
 
             </div>
 
