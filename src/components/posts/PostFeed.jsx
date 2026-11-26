@@ -21,8 +21,7 @@ function PostFeed({ posts, showCategories = true }) {
                     time={formatTime(post.createdAt)}
                     categories={post.categories}
                     tags={post.tags}
-                    coverImage={post.coverImage}
-                    showCoverInFeed={post.showCoverInFeed}
+                    cover={post.cover}
                     showCategories={showCategories}
                 />
             ))}

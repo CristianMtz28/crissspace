@@ -9,6 +9,12 @@ export const posts = [
             createdAt: '2026-11-22T20:25:00-06:00',
             categories: ['Programación'],
             tags: ['CrissSpace', 'React'],
+            cover: {
+                type: 'video',
+                src: '/posts/vertical-cover.mov',
+                layout: 'side',
+                showInFeed: true,
+            },
             type: 'article',
         },
         {
@@ -19,6 +25,12 @@ export const posts = [
             createdAt: '2026-10-25T17:48:00-06:00',
             categories: ['Cine y series'],
             tags: ['Rocky', 'Legendarias'],
+            cover: {
+                type: 'youtube',
+                src: 'https://www.youtube.com/shorts/cFN4aiGhR2M',
+                layout: 'side',
+                showInFeed: true,
+            },
             type: 'article',
         },
         {
@@ -33,8 +45,13 @@ export const posts = [
             author: 'Cristian Martínez',
             createdAt: '2026-01-07T15:12:00-06:00',
             categories: ['Cómics', 'Cine y series', 'Videojuegos'],
-            tags: ['Batman', 'DC Comics', 'Gotham'],
-            coverImage: '/posts/batman-cover.jpg',
+            tags: ['Batman', 'DC Comics', 'Gotham'],            
+            cover: {
+                type: 'image',
+                src: '/posts/batman-cover.jpg',
+                layout: 'banner',
+                showInFeed: true,
+            },
             showCoverInFeed: true,
             type: 'article',
         },
@@ -46,6 +63,12 @@ export const posts = [
             createdAt: '2026-05-26T12:11:00-06:00',
             categories: ['Viajes'],
             tags: ['Acapulco', 'México'],
+            cover: {
+                type: 'image',
+                src: '/posts/acapulco-cover.jpeg',
+                layout: 'side',
+                showInFeed: true,
+            },
             type: 'article',
         },
         {
@@ -65,6 +88,12 @@ export const posts = [
             createdAt: '2026-07-10T09:11:00-06:00',
             categories: ['Música'],
             type: 'article',
+            cover: {
+                type: 'youtube',
+                src: 'https://youtu.be/4TnoY0MBm48?si=H0WVfwURHczwCnTK',
+                layout: 'banner',
+                showInFeed: true,
+            },
             tags: ['JoseMadero', 'Querido'],
         },
         {
@@ -75,6 +104,12 @@ export const posts = [
             createdAt: '2026-02-16T07:15:00-06:00',
             categories: ['Videojuegos'],
             type: 'article',
+            cover: {
+                type: 'video',
+                src: '/posts/gtavi-cover.mp4',
+                layout: 'banner',
+                showInFeed: true,
+            },
             tags: ['GTA', 'GTAVI', 'PlayStation'],
         },
         {
