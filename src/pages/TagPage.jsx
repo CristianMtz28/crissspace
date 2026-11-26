@@ -9,7 +9,7 @@ function TagPage() {
     const { tag } = useParams();
 
     const filteredPosts = posts.filter((post) =>
-        post.tags.some((item) => slugify(item) === tag)
+        post.tags?.some((item) => slugify(item) === tag)
     );
 
     return <PostFeed posts={filteredPosts} />;

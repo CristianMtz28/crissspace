@@ -1,6 +1,7 @@
 import { SiPlaystation } from 'react-icons/si';
 import { TbBallFootball } from 'react-icons/tb';
 import { NavLink } from 'react-router-dom';
+import { categories } from '../data/categories';
 
 import {
     House,
@@ -26,7 +27,7 @@ function Sidebar() {
         { label: 'Fútbol', path: '/futbol', icon: TbBallFootball },
         { label: 'Música', path: '/musica', icon: AudioWaveform },
         { label: 'Videojuegos', path: '/videojuegos', icon: SiPlaystation, iconSize: 23 },
-        { label: 'Comics', path: '/comics', icon: BookOpen },
+        { label: 'Cómics', path: '/comics', icon: BookOpen },
         { label: 'Viajes', path: '/viajes', icon: Plane },
         { label: 'Programación', path: '/programacion', icon: CodeXml },
     ];
@@ -73,6 +74,10 @@ function Sidebar() {
                 {topicItems.map((item) => {
                     const Icon = item.icon;
 
+                    const categoryData = categories.find(
+                        (category) => category.path === item.path
+                    );
+
                     return (
                         
                         <NavLink
@@ -82,7 +87,10 @@ function Sidebar() {
                             className={({ isActive }) =>
                                 `flex items-center gap-3 rounded-lg px-3 py-2 text-[13px] transition-colors ${
                                     isActive
-                                        ? 'bg-gray-900 font-semibold text-white dark:bg-[#29271F] dark:text-[#DDBC7C]'
+                                        ? `font-semibold ${
+                                            categoryData?.colorClass ??
+                                            'bg-gray-900 text-white dark:bg-[#29271F] dark:text-[#DDBC7C]'
+                                        }`
                                         : 'hover:bg-gray-200 dark:hover:bg-[#29271F]'
                                 }`
                             }

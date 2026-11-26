@@ -32,6 +32,11 @@ export const posts = [
                 showInFeed: true,
             },
             type: 'article',
+            contentWarning: {
+                enabled: true,
+                type: 'spoiler',
+                message: 'Esta publicación contiene detalles importantes de la trama de la película o serie. Se recomienda haberla visto antes de continuar.',
+            },
         },
         {
             id: 3,
@@ -125,10 +130,13 @@ export const posts = [
         {
             id: 9,
             type: 'quock',
-            content: 'Practicando con fechas reales',
+            content: 'No cabe duda que Dios le da sus peores celibatos a sus guerreros más cachondos 😫',
             author: 'Cristian Martínez',
             createdAt: '2026-11-24T10:02:00-06:00',
-            categories: ['Programación'],
-            tags: ['CrissSpace', 'React'],
+            contentWarning: {
+                enabled: true,
+                type: 'humor',
+                message: 'Esta publicación puede contener humor negro, sátira o lenguaje explícito.',
+            },
         },
     ];

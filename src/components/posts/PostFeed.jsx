@@ -23,6 +23,7 @@ function PostFeed({ posts, showCategories = true }) {
                     tags={post.tags}
                     cover={post.cover}
                     showCategories={showCategories}
+                    contentWarning={post.contentWarning}
                 />
             ))}
         </div>

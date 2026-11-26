@@ -16,7 +16,7 @@ function YouTubeCover({ src, title, layout = 'banner' }) {
         <div
             className={`relative w-full overflow-hidden bg-black ${
                 layout === 'side'
-                    ? 'aspect-[9/16] sm:w-1/3 sm:shrink-0'
+                    ? 'aspect-[9/16] rounded sm:w-[28%] sm:shrink-0'
                     : 'aspect-video'
             }`}
         >

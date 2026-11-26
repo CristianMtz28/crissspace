@@ -6,7 +6,7 @@ import { posts } from '../data/posts';
 function CategoryPage({ category }) {
 
     const filteredPosts = posts.filter(
-        (post) => post.categories.includes(category)
+        (post) => post.categories?.includes(category)
     );
 
     return <PostFeed posts={filteredPosts} showCategories={false} />;
