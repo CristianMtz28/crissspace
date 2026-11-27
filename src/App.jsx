@@ -11,6 +11,7 @@ import QuockPage from './pages/QuockPage.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import CategoryPage from './pages/CategoryPage.jsx';
 import TagPage from './pages/TagPage';
+import ArticlePage from './pages/ArticlePage';
 
 function App() {
     const { isDark, setIsDark } = useTheme();
@@ -34,7 +35,9 @@ function App() {
         <main className="min-w-0">
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path='/blog' element={<BlogPage  />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:slug" element={<ArticlePage />} />
                 <Route path='/quocks' element={<QuockPage  />} />
                 <Route path="/wishlist" element={<WishlistPage />} />
                 <Route path="/tag/:tag" element={<TagPage />} />

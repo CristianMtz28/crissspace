@@ -15,6 +15,7 @@ function PostFeed({ posts, showCategories = true }) {
                     key={post.id}
                     type={post.type}
                     title={post.title}
+                    slug={post.slug}
                     content={getExcerpt(post)}
                     author={post.author}
                     date={formatDate(post.createdAt)}

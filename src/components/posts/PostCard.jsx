@@ -8,6 +8,7 @@ import ContentWarning from './ContentWarning';
 function PostCard({
     title,
     content,
+    slug,
     date,
     time,
     categories = [],
@@ -67,7 +68,7 @@ function PostCard({
 
     return (
         <article
-            className={`overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-[#39372F] dark:bg-[#1C1D1C] ${
+            className={`relative overflow-hidden rounded-xl border border-gray-200 bg-white dark:border-[#39372F] dark:bg-[#1C1D1C] ${
                 isSideCover
                     ? 'flex flex-col gap-4 p-4 sm:flex-row sm:items-center'
                     : ''
@@ -95,7 +96,7 @@ function PostCard({
                     controls
                     playsInline
                     preload="metadata"
-                    className={`w-full bg-black object-contain ${
+                    className={`relative z-20 w-full bg-black object-contain ${
                         isSideCover
                             ? 'aspect-[9/16] rounded sm:w-[28%] sm:shrink-0'
                             : 'aspect-video'
@@ -136,9 +137,14 @@ function PostCard({
 
                 {type === 'article' && title && (
                     <h2 className="text-2xl font-bold leading-tight tracking-tight">
-                        <span className="post-title-highlight">
-                            {title}
-                        </span>
+                        <Link
+                            to={`/blog/${slug}`}
+                            className="after:absolute after:inset-0 after:z-10"
+                        >
+                            <span className="post-title-highlight">
+                                {title}
+                            </span>
+                        </Link>
                     </h2>
                 )}
 
@@ -179,7 +185,7 @@ function PostCard({
                                 <Link
                                     key={category}
                                     to={categoryData.path}
-                                    className={`${categoryClass} transition-opacity duration-200 hover:opacity-70`}
+                                    className={`relative z-20 ${categoryClass} transition-opacity duration-200 hover:opacity-70`}
                                 >
                                     {category}
                                 </Link>
@@ -190,7 +196,7 @@ function PostCard({
                             <Link
                                 key={`tag-${tag}`}
                                 to={`/tag/${slugify(tag)}`}
-                                className="text-xs text-gray-500 transition-colors duration-200 hover:text-[#8B6A32] dark:text-[#AAA9A3] dark:hover:text-[#DDBC7C]"
+                                className="relative z-20 text-xs text-gray-500 transition-colors duration-200 hover:text-[#8B6A32] dark:text-[#AAA9A3] dark:hover:text-[#DDBC7C]"
                             >
                                 #{tag.replace(/\s+/g, '')}
                             </Link>
@@ -208,7 +214,7 @@ function PostCard({
                         <button
                             type="button"
                             onClick={() => setIsRevealed(false)}
-                            className="cursor-pointer text-xs text-gray-500 transition-colors duration-200 hover:text-[#8B6A32] dark:text-[#AAA9A3] dark:hover:text-[#DDBC7C]"
+                            className="relative z-20 cursor-pointer text-xs text-gray-500 transition-colors duration-200 hover:text-[#8B6A32] dark:text-[#AAA9A3] dark:hover:text-[#DDBC7C]"
                         >
                             Ocultar contenido
                         </button>
